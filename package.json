@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-e-commerce-api",
+  "version": "1.0.0",
+  "description": "Node.js E-commerce API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dinushchathurya/nodejs-e-commerce-api.git"
+  },
+  "keywords": [
+    "node.js",
+    "e-commerce-api"
+  ],
+  "author": "Dinush Chathurya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dinushchathurya/nodejs-e-commerce-api/issues"
+  },
+  "homepage": "https://github.com/dinushchathurya/nodejs-e-commerce-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
