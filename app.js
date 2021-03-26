@@ -7,14 +7,13 @@ const app = express();
 require('dotenv/config');
 
 const api = process.env.API_URL;
+const productRouter = require('./routes/products');
 
 //middlewares
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
-app.get(`${api}/products`, (req, res)=>{
-    res.send('API Works');
-})
+app.use(`${api}/products`, productRouter)
 
 mongoose.connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
