@@ -1,0 +1,26 @@
+name: Upload Website
+on:
+ push:
+   branches:
+     - master
+jobs:
+ Deploy:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout
+       uses: actions/checkout@v2
+     - name: Setup node
+       uses: actions/setup-node@v2
+     - name: Install dependencies
+       run: npm install
+     - name: Build static file
+       run: npm run build
+     - name: deploy to S3
+       env:
+          AWS_ACCESS_KEY: "${{ secrets.AWS_ACCESS_KEY}}"
+          AWS_SECRET_ACCESS_KEY: "${{secrets.AWS_SECRET_ACCESS}}"
+          AWS_DEFAULT_REGION: us-west-2
+       run:
+           aws s3 cp \
+           ./build/ s3://devopsproject1jan \
+           --recursive
